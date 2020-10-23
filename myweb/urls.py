@@ -1,4 +1,6 @@
 from django.urls import path
+from django.conf.urls import url
+from django.contrib import admin
 
 from . import views
 
@@ -11,4 +13,8 @@ urlpatterns = [
     path('<int:question_id>/results/', views.results, name='results'),
     # ex: /myweb/5/vote/
     path('<int:question_id>/vote/', views.vote, name='vote'),
+    path('',views.Register, name="Register"),
+    path('',views.Login, name="Login"),
+    path('',views.indexuser, name="indexuser"),
+    path('',views.Write, name="Write"),
 ]
