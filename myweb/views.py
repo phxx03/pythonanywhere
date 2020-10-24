@@ -11,7 +11,8 @@ from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
 from django.http import Http404
-from .models import Novel
+from .models import Novels
+from .forms import Novely
 
 # Create your views here.
 def index(req):
@@ -19,12 +20,15 @@ def index(req):
 	return render(req,'myweb/index.html')
 
 def indexuser(req):
-	aa = Novel.objects.all()
+	aa = Novels.objects.all()
 	return render(req, 'myweb/indexuser.html' , {'aa':aa})
 
 def Write(req):
-	#return HttpResponse(req.wethod')
-	return render(req,'myweb/Write.html')
+	aa = Novels.objects.all()
+	ins = {
+        'aa' : aa
+        }
+	return render(req,'myweb/Write.html', ins)
 
 def Login(req):
     return render(req, 'myweb/Login.html')
@@ -94,3 +98,18 @@ def logout(req):
     logout(req)
     messages.info(req, "Logged out successfully!")
     return redirect("/index")
+
+#---------------Write-----------------
+
+def Write(request):
+    if request.method == 'POST':
+        form = Novely(request.POST)
+
+        if form.is_valid():
+            a = form.save()
+            a.save()
+            return redirect("/indexuser")
+    else:
+        form = Novely()
+        context = {'form': form}
+        return render(request, 'myweb/Write.html', context)

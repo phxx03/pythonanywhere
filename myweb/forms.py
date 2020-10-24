@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Novel
+from .models import Novels
 from django.forms import ModelForm
 
 class NewUserForm(UserCreationForm):
@@ -20,5 +20,5 @@ class NewUserForm(UserCreationForm):
 
 class Novely(ModelForm):
     class Meta:
-        model = Novel
-        fields = ['Fimg','FictionName','FWriterName','Material']
+        model = Novels
+        fields = ['TypeName','Fimg','FictionName','FWriterName','Material']

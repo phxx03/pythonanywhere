@@ -77,9 +77,13 @@
 		<!-- header section end -->
 
 		<!-- header section -->
-		{% for a in aa %}
-        <img src="{{ a.Fimg }}" style="width:100%" class="w3-margin-bottom">
-        {% endfor %}
+		{% block content %}
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" />
+    </form>
+    {% endblock %}
 		<!-- Page section end-->
 	</div>
 

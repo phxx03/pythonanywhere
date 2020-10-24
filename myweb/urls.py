@@ -17,4 +17,5 @@ urlpatterns = [
     path('',views.Login, name="Login"),
     path('',views.indexuser, name="indexuser"),
     path('',views.Write, name="Write"),
+    path('',views.Novely, name='Novely'),
 ]

@@ -4,4 +4,5 @@ from .models import *
 admin.site.register(Question)
 admin.site.register(Choice)
 
-admin.site.register(Novel)
+admin.site.register(Novels)
+admin.site.register(Type)
