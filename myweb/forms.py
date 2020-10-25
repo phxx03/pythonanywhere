@@ -25,10 +25,10 @@ class Novely(ModelForm):
 
 
 searchchoices = (
-        ('Y' , 'Y'),
-        ('Drama' , 'Drama'),
-        ('Action' , 'Action'),
-        ('Fantasy' , 'Fantasy'),
+        ('y', 'y'),
+        ('drama' , 'drama'),
+        ('action' , 'action'),
+        ('fantasy' , 'fantasy'),
     )
 
 class SearchForm(forms.Form):

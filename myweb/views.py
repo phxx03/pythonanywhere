@@ -11,7 +11,7 @@ from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
 from django.http import Http404
-from .models import Novels
+from .models import Novels as Novels, Type
 from .forms import Novely,SearchForm
 
 # Create your views here.
@@ -19,13 +19,42 @@ def index(req):
 	#return HttpResponse(req.wethod')
 	return render(req,'myweb/index.html')
 
+#---------------search------------------------
+
 def search(req):
-   return render(req, 'myweb/search.html')
+    if req.method == "POST":
+        form = SearchForm(req.POST)
+        if form.is_valid():
+            searchby = str(form.cleaned_data['SearchBy'])
+
+            if searchby == 'y':
+                showType = Novels.objects.filter(TypeName__Type_Name__contains=searchby)
+
+            elif searchby == 'drama':
+
+                showType = Novels.objects.filter(TypeName__Type_Name__contains=searchby)
+
+
+            elif searchby == 'action':
+
+                showType = Novels.objects.filter(TypeName__Type_Name__contains=searchby)
+
+
+            elif searchby == 'fantasy':
+
+                showType = Novels.objects.filter(TypeName__Type_Name__contains=searchby)
+
+            return render(req , "myweb/showsearch.html",{"showType":showType})
+    else:
+        form = SearchForm()
+        context = {'form':form}
+        return render(req, 'myweb/search.html',context)
+
+#----------------------------------------------------------------------
 
 def indexuser(req):
     aa = Novels.objects.all()
-
-    return render(req, 'myweb/Login.html' ,{'aa':aa})
+    return render(req, 'myweb/indexuser.html' ,{'aa':aa})
 
 def Write(req):
 	aa = Novels.objects.all()

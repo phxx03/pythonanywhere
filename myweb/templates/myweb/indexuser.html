@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zxx">
 <head>
-	<title>Photo Gallery HTML Template</title>
+	<title>Novel - Home</title>
 	<meta charset="UTF-8">
 	<meta name="description" content="Photo Gallery HTML Template">
 	<meta name="keywords" content="endGam,gGaming, magazine, html">
@@ -73,7 +73,6 @@
 					<li class="active"><a href="/indexuser">Home</a></li>
 					<li><a href="/">Logout</a></li>
 					<li><a href="/Write">Whrite</a></li>
-					<li><a href="/Login">Contact</a></li>
 				</ul>
 				<div class="social-links-warp">
 					<div class="social-links">
@@ -112,18 +111,8 @@
 	<!-- Search model -->
 	<div class="search-model">
 		<div class="h-100 d-flex align-items-center justify-content-center">
-
-			<form class="search-moderl-form" method="POST">
-			    {% csrf_token %}
-
-				<select  >
-				    <option name='1'>Y</option>
-				    <option name='2'>Drama</option>
-				    <option name='3'>Action</option>
-				    <option name='4'>Fantasy</option>
-
-				</select>
-                <button type="submit" style="margin-top:2rem">Submit</button>
+		    <form>
+                <button type="submit" style="margin-top:8rem"><a href="/search">SEARCH</a></button>
 			</form>
 		</div>
 	</div>

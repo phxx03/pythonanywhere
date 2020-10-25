@@ -18,9 +18,9 @@ class Choice(models.Model):
 #-----------------------------------------------------------------------------------------#
 class Type(models.Model):
     id = models.AutoField(primary_key=True)
-    Type_Name = models.CharField(max_length=100,default="ประเภท")
+    Type_Name = models.CharField(max_length=100,blank=True)
     def __str__(self):
-        return f'{self.Type_Name}'
+        return f'{self.id} {self.Type_Name}'
 
 
 class Novels(models.Model):

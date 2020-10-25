@@ -60,6 +60,7 @@
 
 	<div class="main-warp">
 		<!-- header section -->
+
 		<header class="header-section">
 			<div class="header-close">
 				<i class="fa fa-times"></i>
@@ -88,13 +89,29 @@
 
 		</header>
 		<!-- header section end -->
-
+		<div class="w3-row-padding w3-margin-top">
+		{% for i in showType %}
+		<div class="w3-third">
+		    <div class="w3-card">
+    		    <img src="{{ i.Fimg }}">
+    		    <div class="w3-container">
+    		        <h3>{{i.FWriterName}} ,{{i.TypeName}}</h3>
+                </div>
+                <div class="w3-container">
+                    <p>{{i.Material}}</p>
+                </div>
+            </div>
+        </div>
+		{% endfor %}
 		<!-- header section -->
-		<form method="POST">
-		{% csrf_token %}
-		{{ form.as_p }}
-		<button type="submit">Search</button>
-		</form>
+    <div class="search-model">
+		<div class="h-100 d-flex align-items-center justify-content-center">
+		    <form>
+                <button type="submit" style="margin-top:8rem"><a href="/search">SEARCH</a></button>
+			</form>
+		</div>
+	</div>
+
 		<!-- Page section end-->
 	</div>
 
