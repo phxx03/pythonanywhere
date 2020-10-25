@@ -14,4 +14,5 @@ urlpatterns = [
     path('Register', views.Register),
     path('indexuser', views.indexuser),
     path('Write', views.Write),
+    path('search', views.search),
 ]

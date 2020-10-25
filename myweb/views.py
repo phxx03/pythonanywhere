@@ -12,16 +12,20 @@ from django.views import generic
 from django.utils import timezone
 from django.http import Http404
 from .models import Novels
-from .forms import Novely
+from .forms import Novely,SearchForm
 
 # Create your views here.
 def index(req):
 	#return HttpResponse(req.wethod')
 	return render(req,'myweb/index.html')
 
+def search(req):
+   return render(req, 'myweb/search.html')
+
 def indexuser(req):
-	aa = Novels.objects.all()
-	return render(req, 'myweb/indexuser.html' , {'aa':aa})
+    aa = Novels.objects.all()
+
+    return render(req, 'myweb/Login.html' ,{'aa':aa})
 
 def Write(req):
 	aa = Novels.objects.all()

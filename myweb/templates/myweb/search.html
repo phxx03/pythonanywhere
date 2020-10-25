@@ -90,44 +90,12 @@
 
 		<!-- header section -->
 
-		<div class="w3-row-padding w3-margin-top">
-		    {% for a in aa %}
-		    <div class="w3-third">
-		        <div class="w3-card">
-                    <img src="{{ a.Fimg }}" style="width:100%" class="w3-margin-bottom">
-                    <div class="w3-container">
-                        <h3>{{a.FWriterName}} ,{{a.TypeName}}</h3>
-                    </div>
-                    <div class="w3-container">
-                        <p>{{a.Material}}</p>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-        </div>
 
 		<!-- Page section end-->
 	</div>
 
-	<!-- Search model -->
-	<div class="search-model">
-		<div class="h-100 d-flex align-items-center justify-content-center">
 
-			<form class="search-moderl-form" method="POST">
-			    {% csrf_token %}
 
-				<select  >
-				    <option name='1'>Y</option>
-				    <option name='2'>Drama</option>
-				    <option name='3'>Action</option>
-				    <option name='4'>Fantasy</option>
-
-				</select>
-                <button type="submit" style="margin-top:2rem">Submit</button>
-			</form>
-		</div>
-	</div>
-	<!-- Search model end -->
 
 
 	<!--====== Javascripts & Jquery ======-->

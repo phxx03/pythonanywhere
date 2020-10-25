@@ -22,3 +22,14 @@ class Novely(ModelForm):
     class Meta:
         model = Novels
         fields = ['TypeName','Fimg','FictionName','FWriterName','Material']
+
+
+searchchoices = (
+        ('Y' , 'Y'),
+        ('Drama' , 'Drama'),
+        ('Action' , 'Action'),
+        ('Fantasy' , 'Fantasy'),
+    )
+
+class SearchForm(forms.Form):
+    SearchBy = forms.ChoiceField(choices=searchchoices)
